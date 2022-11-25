@@ -1,0 +1,55 @@
+version: '3.7'
+services:
+  microservicio1: #microservicio1
+    container_name: microservicio1
+    image: cesarmoralesh/asesorias-micro2:v1
+    build: 
+      context: .
+    ports:
+      - "4000"
+    networks:
+      - asesorias-red 
+    environment:
+      CONTAINET_HOST: microservicio1  
+ ###
+  microservicio2: #microservicio2
+    container_name: microservicio2
+    image: cesarmoralesh/asesorias-micro2:v1
+    build: 
+      context: .
+    ports:
+      - "4000"
+    networks:
+      - asesorias-red
+    environment:
+      CONTAINET_HOST: microservicio2  
+  ###
+  microservicio3: #microservicio3
+    container_name: microservicio3
+    image: cesarmoralesh/asesorias-micro2:v1
+    build: 
+      context: .
+    ports:
+      - "4000"
+    networks:
+      - asesorias-red
+    environment:
+      CONTAINET_HOST: microservicio3
+  load-balancer: #load balancer
+    container_name: load-balancer
+    image: load-balancer:v1
+    build: 
+      context: ./load-balancer
+    ports:
+      - "8082:80"
+    networks:
+      - asesorias-red 
+    depends_on:
+      - microservicio1
+      - microservicio2
+      - microservicio3
+    restart: always 
+
+networks: 
+  asesorias-red:
+
