@@ -3,8 +3,6 @@ services:
   microservicio1-cesar: #microservicio1
     container_name: microservicio1-cesar
     image: cesarmoralesh/asesorias-micro2:v1
-    build: 
-      context: .
     ports:
       - "4000"
     networks:
@@ -15,8 +13,6 @@ services:
   microservicio2-cesar: #microservicio2
     container_name: microservicio2-cesar
     image: cesarmoralesh/asesorias-micro2:v1
-    build: 
-      context: .
     ports:
       - "4000"
     networks:
@@ -27,8 +23,6 @@ services:
   microservicio3-cesar: #microservicio3
     container_name: microservicio3-cesar
     image: cesarmoralesh/asesorias-micro2:v1
-    build: 
-      context: .
     ports:
       - "4000"
     networks:
@@ -41,7 +35,7 @@ services:
     build: 
       context: ./load-balancer
     ports:
-      - "6076:80"
+      - "8080:80"
     networks:
       - asesorias-red 
     depends_on:
