@@ -1,7 +1,7 @@
 version: '3.7'
 services:
-  microservicio1-cesar: #microservicio1
-    container_name: microservicio1-cesar
+  microservicio1-cesarm: #microservicio1
+    container_name: microservicio1-cesarm
     image: cesarmoralesh/asesorias-micro2:v1
     ports:
       - "4000"
@@ -10,8 +10,8 @@ services:
     environment:
       CONTAINET_HOST: microservicio1  
  ###
-  microservicio2-cesar: #microservicio2
-    container_name: microservicio2-cesar
+  microservicio2-cesarm: #microservicio2
+    container_name: microservicio2-cesarm
     image: cesarmoralesh/asesorias-micro2:v1
     ports:
       - "4000"
@@ -20,8 +20,8 @@ services:
     environment:
       CONTAINET_HOST: microservicio2  
   ###
-  microservicio3-cesar: #microservicio3
-    container_name: microservicio3-cesar
+  microservicio3-cesarm: #microservicio3
+    container_name: microservicio3-cesarm
     image: cesarmoralesh/asesorias-micro2:v1
     ports:
       - "4000"
@@ -39,9 +39,9 @@ services:
     networks:
       - asesorias-red 
     depends_on:
-      - microservicio1-cesar
-      - microservicio2-cesar
-      - microservicio3-cesar
+      - microservicio1-cesarm
+      - microservicio2-cesarm
+      - microservicio3-cesarm
     restart: always 
 
 networks: 
