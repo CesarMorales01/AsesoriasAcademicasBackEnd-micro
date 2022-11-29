@@ -41,7 +41,7 @@ services:
     build: 
       context: ./load-balancer
     ports:
-      - "8082:80"
+      - "6075:80"
     networks:
       - asesorias-red 
     depends_on:
