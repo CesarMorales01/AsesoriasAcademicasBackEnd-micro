@@ -29,9 +29,9 @@ services:
       - asesorias-red
     environment:
       CONTAINET_HOST: microservicio3
-  load-balancer-cesar: #load balancer
-    container_name: load-balancer-cesar
-    image: load-balancer-cesar:v1
+  load-balancer-cesarm: #load balancer
+    container_name: load-balancer-cesarm
+    image: load-balancer-cesarm:v1
     build: 
       context: ./load-balancer
     ports:
